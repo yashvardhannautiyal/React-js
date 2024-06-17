@@ -15,7 +15,7 @@ import ReactDOM from "react-dom"; //this is efficient way of imorting modules in
 ReactDOM.render(
   <div>
     <h1>Hello world</h1>
-    <p>hweyy again</p>
+    <p>heyy again</p>
   </div>,
   document.getElementById("root")
 );
