@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const fName = "angela";
-const lName = "Yu";
+const fName = "yash";
+const lName = "vardhan";
 const num = 9;
 ReactDOM.render(
   <div>
@@ -21,7 +21,7 @@ ReactDOM.render(
 
 // Notes
 // to access any variable while rendering which is outside the main div container we use {} curly braces to call it also we can use js expressions inside { curly braces}
-// but we cannpt write vanilla js inside {curly braces}
+// but we cannot write vanilla js inside {curly braces}
 
 
 // If you're running this locally in VS Code use the commands:
