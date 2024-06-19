@@ -1,13 +1,14 @@
 import React from "react";
 import Heading from "./Heading";
 import List from "./List";
+import Welcome from "./Welcome";
 
 //Class component
-class Welcome extends React.Component{
-        render(){ 
-          return <h1>This is class component</h1>;
-        }
-      };
+// class Welcome extends React.Component{
+//         render(){ 
+//           return <h1>This is class component</h1>;
+//         }
+//       };
 function App() {
   return (
     <div>
