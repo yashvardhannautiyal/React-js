@@ -1,5 +1,5 @@
 import React from "react";
-
+//Functional component
 function List() {
   return (
     <ul>
