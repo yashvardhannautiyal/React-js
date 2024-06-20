@@ -1,3 +1,4 @@
+//data file for transfering data
 const contacts = [
   {
     id: 1,
