@@ -2,15 +2,16 @@ import React, {useState} from "react";
 
 const CounterComponent = () => {
     const [count, setCount] = useState(27839);
-    const [value, setValue] = useState("yash");
+    // const [value, setValue] = useState("yash");
     console.log(count); // value in console is updated as in state whenever a value is updatated the app is re-rendered with updated value
 
 
     return(
         <div>
             <p>Count Component - {count}</p>
-            <h5>Value is {value}</h5>
-            <button onClick={() => setValue("React")}>Change</button>
+            {/* <h5>Value is {value}</h5> */}
+            {/* <button onClick={() => setValue("React")}>Change</button> */}
+            <h3>Number is {count % 2 == 0 ? "Even" : "Odd"}</h3>  {/*tells value is even or odd even when increment/decrement */}
             <button onClick={()=> setCount(count + 1)}>Increment</button>
             <button onClick={()=> setCount(count - 1)}>Decrement</button>
         </div>
