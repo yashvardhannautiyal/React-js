@@ -19,10 +19,19 @@ const MyComponent = ()=>{
 
     useEffect(()=>{
         console.log("MyComponent is mounting....")
+
+        return function(){
+            console.log("Unmounting....");
+        }
+
     }, []) //empty dependency tells that this needs to be run when mounting
 
     useEffect(()=>{
-        console.log("Count got updated")
+        console.log("Count got updated", count) //returns updated value (count)
+
+        return function(){
+            console.log("returning count", count); // returns previous mounted value(count)
+        }
     }, [count, count2]); //runs everytime when updating count
 
     return (
