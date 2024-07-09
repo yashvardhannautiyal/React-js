@@ -5,6 +5,13 @@ export const getPosts = async()=>{
     return await response.json();
 };
 
+export const getRandomUser = async() =>{
+  const response = await fetch('https://randomuser.me/api/',{
+    method : 'GET',
+  });
+  return await response.json();
+}
+
 
 //promise : A promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value
 
