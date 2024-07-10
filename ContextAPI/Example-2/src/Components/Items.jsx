@@ -9,7 +9,7 @@ const Item = (props) =>{
         <div className="item-cart">
             <h4>{props.name} </h4>
             <p>{props.price} </p>
-            <button>Add to Cart</button>
+            <button onClick={() => cart.setItems([...cart.items, {name : props.name, price : props.price}, ])}>Add to Cart</button>
         </div>
     )
 }

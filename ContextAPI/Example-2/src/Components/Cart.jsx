@@ -1,11 +1,18 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../Context/Cart";
 
 const Cart = () =>{
+    const cart = useContext(CartContext);
+    const total = cart.items.reduce((a,b) => a+b.price, 0)
+
     return (
         <div className="cart">
-            <li>Mackbook - $54000</li>
-
-            <h5>Total bill : $</h5>
+            <h1>Cart</h1>
+            {
+                cart && cart.items.map(item => <li>{item.name} - {item.price}</li>)
+            }
+            <h5>Total bill : ${total}</h5>
         </div>
     )
 }
