@@ -1,3 +1,4 @@
+import AppLayout from "./Components/layout/AppLayout";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home";
@@ -7,47 +8,53 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 const App = () =>{
   // ------------------New method-without helper function---------------------------- 
-// const router = createBrowserRouter( //array of objects
-//   [
-//     {
-//       path : "/", //path defines the page url
-//       element : <Home />
-//     },
-//     {
-//       path : "/about",
-//       element : <About />
-//     },
-//     {
-//       path : "/movie",
-//       element : <Movie />
-//     },
-//     {
-//       path : "/contact",
-//       element : <Contact />
-//     }
-//   ]
-// )
+  // prefer this method 
+const router = createBrowserRouter( //array of objects
+  [
+    {
+      path : "/",
+      element : <AppLayout />,
+      children : [
+        {
+          path : "/", //path defines the page url
+          element : <Home />
+        },
+        {
+          path : "/about",
+          element : <About />
+        },
+        {
+          path : "/movie",
+          element : <Movie />
+        },
+        {
+          path : "/contact",
+          element : <Contact />
+        }
 
-
-//---------------------------------Traditional method : using helper function------------------------------
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route>//we are required with a parent element always
-      <Route  path = "/"   element = {<Home />} />
-      <Route  path = "/about"   element = {<About />} />
-      <Route  path = "/movie"   element = {<Movie />} />
-      <Route  path = "/contact"   element = {<Contact />} />
-      
-    </Route>
-  )
+      ]
+    }
+    
+  ]
 )
 
 
+//---------------------------------Traditional method : using helper function------------------------------
+
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route>//we are required with a parent element always
+//       <Route  path = "/"   element = {<Home />} />
+//       <Route  path = "/about"   element = {<About />} />
+//       <Route  path = "/movie"   element = {<Movie />} />
+//       <Route  path = "/contact"   element = {<Contact />} />
+      
+//     </Route>
+//   )
+// )
 
 
-
-
-  return <RouterProvider router={router} />
+return <RouterProvider router={router} />
 }
 
 export default App;
