@@ -1,26 +1,22 @@
-import { useContext } from "react";
-import "./App.css";
-import Counter from "./Components/Counter";
-import { CounterContext } from "./Context/Counter";
+import CounterComp from "./components/CounterComp"
+//used to access context in components
+import { useContext } from "react"
+import { CounterContext } from "./Context/CounterContextProvider"
 
 function App() {
+  //reads the value from CounterContext in contextProvider
   const counterState = useContext(CounterContext);
-  console.log("Context", counterState);
-
-  return (
-    <div className="App">
-      <h1>Count is {counterState.count}</h1>
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-    </div>
-  );
+  console.log("context", counterState)
+  return(
+    <>
+    <h1>Counter is {counterState.count}</h1>
+    <CounterComp />
+    <CounterComp />
+    <CounterComp />
+    <CounterComp />
+    </>
+  )
+  
 }
 
-export default App;
-
-
-//using Context 
-//STEP 1 : import useContext
-//STEP 2 : make a contextProvider to include APP.jsx file for accessing context in all the components
+export default App
